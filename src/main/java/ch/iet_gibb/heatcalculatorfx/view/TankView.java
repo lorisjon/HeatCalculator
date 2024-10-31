@@ -45,7 +45,7 @@ public class TankView {
         layout.getChildren().add(btnNext);
 
         /* Scene erstellen und die View darstellen */
-        Scene scene = new Scene(layout,600,600);
+        Scene scene = new Scene(layout,900,600);
         stage.setScene(scene);
         stage.show();
     }
