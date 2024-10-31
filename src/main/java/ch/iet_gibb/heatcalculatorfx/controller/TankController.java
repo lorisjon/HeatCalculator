@@ -2,15 +2,17 @@ package ch.iet_gibb.heatcalculatorfx.controller;
 
 import ch.iet_gibb.heatcalculatorfx.model.TankSuper;
 import ch.iet_gibb.heatcalculatorfx.view.TankView;
+import javafx.event.ActionEvent;
 
 import java.util.List;
 
-public class TankController {
+public class TankController implements javafx.event.EventHandler<ActionEvent> {
 
     protected List<TankSuper> models;
 
     protected TankView view;
 
+    //index mit dem aktuell angezeigtem model im View
     protected int currentTank = 0;
 
     public TankController(List<TankSuper> models) {
@@ -25,7 +27,7 @@ public class TankController {
         view.startView();
     }
 
-    public void showNextLabel() {
+    public void showNextTank() {
         //inkrementiert die Zahl von currentTank um eins, falls man nicht am Ende der Liste ist
         if (currentTank < models.size()-1)
         {
@@ -44,5 +46,10 @@ public class TankController {
         //greift auf die Liste zu, spricht das Element currentTank an
         // und ruft auf diesem Objekt die toString Methode auf
         return models.get(currentTank).toString();
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        showNextTank();
     }
 }

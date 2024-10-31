@@ -13,9 +13,11 @@ import javafx.stage.Stage;
 public class TankView {
 
     protected Stage stage;
+    protected TankController controller;
 
     public TankView(Stage stage, TankController controller) {
         this.stage = stage;
+        this.controller = controller;
     }
 
 
@@ -28,16 +30,17 @@ public class TankView {
         layout.setSpacing(20);
 
         /* Textfeld erstellen und dem Layout anfügen */
-        Text labelText = new Text();
-        labelText.setText("Label");
-        labelText.setFont(Font.font ("Tahoma", FontWeight.EXTRA_BOLD, 20));
+        Text tankText = new Text();
+        tankText.setText("Tank");
+        tankText.setFont(Font.font ("Tahoma", FontWeight.EXTRA_BOLD, 20));
         // Optisch ansprechender Hintergrund mittels CSS definieren
-        labelText.setStyle("-fx-font-family: monospace;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);");
-        layout.getChildren().add(labelText);
+        tankText.setStyle("-fx-font-family: monospace;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);");
+        layout.getChildren().add(tankText);
 
-        /* Button erstellen und dem Layout anfügen, um zwischen den Labels navigieren zu können*/
+        /* Button erstellen und dem Layout anfügen, um zwischen den verschiedenen Tanks navigieren zu können*/
         Button btnNext;
         btnNext = new Button("→");
+        btnNext.setOnAction( controller );
         layout.getChildren().add(btnNext);
 
         /* Scene erstellen und die View darstellen */
