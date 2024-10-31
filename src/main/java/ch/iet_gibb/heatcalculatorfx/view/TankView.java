@@ -22,7 +22,7 @@ public class TankView {
 
 
     public void startView() {
-                /* Layout erstellen (https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm
+        /* Layout erstellen (https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm
         um mehr Informationen über die Layout typen in JavaFX zu erhalten) */
         VBox layout = new VBox();
         // Padding und Abstand zwischen den Elementen setzen
@@ -31,7 +31,8 @@ public class TankView {
 
         /* Textfeld erstellen und dem Layout anfügen */
         Text tankText = new Text();
-        tankText.setText("Tank");
+        //ruft die toString Methode des aktuellen Tanks auf und setzt den Text in der View
+        tankText.setText(controller.getTank());
         tankText.setFont(Font.font ("Tahoma", FontWeight.EXTRA_BOLD, 20));
         // Optisch ansprechender Hintergrund mittels CSS definieren
         tankText.setStyle("-fx-font-family: monospace;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);");

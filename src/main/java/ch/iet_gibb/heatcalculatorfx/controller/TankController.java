@@ -1,6 +1,6 @@
 package ch.iet_gibb.heatcalculatorfx.controller;
 
-import ch.iet_gibb.heatcalculatorfx.model.TankSuper;
+import ch.iet_gibb.heatcalculatorfx.model.TankContainer;
 import ch.iet_gibb.heatcalculatorfx.view.TankView;
 import javafx.event.ActionEvent;
 
@@ -8,14 +8,14 @@ import java.util.List;
 
 public class TankController implements javafx.event.EventHandler<ActionEvent> {
 
-    protected List<TankSuper> models;
+    protected List<TankContainer> models;
 
     protected TankView view;
 
     //index mit dem aktuell angezeigtem model im View
     protected int currentTank = 0;
 
-    public TankController(List<TankSuper> models) {
+    public TankController(List<TankContainer> models) {
         this.models = models;
     }
 

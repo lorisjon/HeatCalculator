@@ -7,7 +7,7 @@ package ch.iet_gibb.heatcalculatorfx.model;
  * @version 1.0.0
  * @since 24.10.2024
  */
-public class QuadratischerTank extends TankSuper {
+public class QuadratischerTank extends TankContainer {
 
     /** der User kann Parameterwerte zur grösse angeben also
      * höhe ←in cm angegeben

@@ -6,7 +6,7 @@ package ch.iet_gibb.heatcalculatorfx.model;
  * @version 1.0.0
  * @since 24.10.2024
  */
-public abstract class TankSuper {
+public abstract class TankContainer {
     /**der User gibt einen Namen für seinen Tank an */
     protected String name;
 
@@ -26,7 +26,7 @@ public abstract class TankSuper {
      * @param maxTemp
      * @param requiredEnergy
      */
-    public TankSuper(String name, int maxTemp, int requiredEnergy) {
+    public TankContainer(String name, int maxTemp, int requiredEnergy) {
         // der wert wird innerhalb der Methode übergeben und nur wenn die String variable nicht leer ist */
         checkName(name);
 

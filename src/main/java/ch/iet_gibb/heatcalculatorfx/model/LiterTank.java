@@ -6,7 +6,7 @@ package ch.iet_gibb.heatcalculatorfx.model;
  * @version 1.0.0
  * @since 24.10.2024
  */
-public class LiterTank extends TankSuper {
+public class LiterTank extends TankContainer {
     /** anstatt parameter werte wie höhe, länge, etc. anzugeben kann der User hier
      * einfach das Fassungsvermögen in Liter angeben, so können auch tanks mit komplizierten Fromen
      * berechnet werden. Also:
