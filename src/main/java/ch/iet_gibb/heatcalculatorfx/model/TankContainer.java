@@ -1,12 +1,17 @@
 package ch.iet_gibb.heatcalculatorfx.model;
 
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Superklasse für das Berechnen von Energie in Wasserspeicher (Tanks)
  * @author Loris Stahlberg
  * @version 1.0.0
  * @since 24.10.2024
  */
-public abstract class TankContainer {
+public abstract class TankContainer implements InterfaceTank  {
     /**der User gibt einen Namen für seinen Tank an */
     protected String name;
 
@@ -180,4 +185,24 @@ public abstract class TankContainer {
     public void setRequiredEnergy(int requiredEnergy) {
         this.requiredEnergy = checkValue(requiredEnergy);
     }
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = new ArrayList<>();
+
+        Property name = new Property("Name:", getName());
+        properties.add(name);
+
+        Property maxTemp = new Property("maximale Temparatur für das Wasser:", Integer.toString(getMaxTemp()) + "");
+        properties.add(maxTemp);
+
+        Property requiredEnergy = new Property("benötigte Energie pro tag in kWh:", Integer.toString(getRequiredEnergy()) + "");
+        properties.add(requiredEnergy);
+
+        Property id = new Property("Tank ID:", Integer.toString(tankId)+ "");
+        properties.add(id);
+
+        return properties;
+    }
+
 }

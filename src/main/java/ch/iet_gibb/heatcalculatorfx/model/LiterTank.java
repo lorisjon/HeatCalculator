@@ -1,4 +1,9 @@
 package ch.iet_gibb.heatcalculatorfx.model;
+
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.List;
+
 /**
  * Klasse für das Berechnen von jeglichen Tanks
  * Mithilfe des Fassungsvermögens in Liter
@@ -53,6 +58,21 @@ public class LiterTank extends TankContainer {
         this.liter = checkValue(liter);
     }
 
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = super.getProperties();
+
+        Property liter = new Property("Fassungsvermögen in l:", Integer.toString(getLiter()));
+        properties.add(liter);
+
+        return properties;
+    }
+
+    @Override
+    public String getTitel() {
+        return "Liter Tank";
+    }
 
     /**
      * Gibt die werte der Variablen eines LiterTank objekts aus

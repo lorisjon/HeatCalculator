@@ -1,4 +1,9 @@
 package ch.iet_gibb.heatcalculatorfx.model;
+
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.List;
+
 /**
  * Klasse für das Berechnen von zylindrischen Tanks
  * @author Loris Stahlberg
@@ -79,6 +84,25 @@ public class ZylindrischerTank extends TankContainer {
      */
     public void setHeight(int height) {
         this.height = checkValue(height);
+    }
+
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = super.getProperties();
+
+        Property radius = new Property("Radius in cm:", Integer.toString(getRadius()));
+        properties.add(radius);
+
+        Property height = new Property("Höhe in cm:", Integer.toString(getHeight()));
+        properties.add(height);
+
+        return properties;
+    }
+
+    @Override
+    public String getTitel() {
+        return "Zylindrischer Tank";
     }
 
     /**

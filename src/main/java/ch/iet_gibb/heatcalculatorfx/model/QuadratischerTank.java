@@ -1,6 +1,10 @@
 package ch.iet_gibb.heatcalculatorfx.model;
 
 
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.List;
+
 /**
  * Klasse für das Berechnen von quadratischen Tanks
  * @author Loris Stahlberg
@@ -101,6 +105,28 @@ public class QuadratischerTank extends TankContainer {
      */
     public void setLength(int length) {
         this.length = checkValue(length);
+    }
+
+
+    @Override
+    public String getTitel() {
+        return "Quadratischer Tank";
+    }
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = super.getProperties();
+
+        Property height = new Property("Höhe in cm:", Integer.toString(getHeight()));
+        properties.add(height);
+
+        Property width = new Property("Width in cm:", Integer.toString(getWidth()));
+        properties.add(width);
+
+        Property length = new Property("Length in cm:", Integer.toString(getLength()));
+        properties.add(length);
+
+        return properties;
     }
 
     /**
