@@ -111,6 +111,7 @@ public abstract class TankContainer {
         final double specificHeatCapacity = 4.186;
 
         final double roomTemperature = 20.0; // Angenommene Raumtemperatur in °C
+
         // Temperaturdifferenz ΔT (Differenz zwischen Maximaltemperatur und Raumtemperatur)
         double deltaT = maxTemp - roomTemperature;
 
@@ -130,6 +131,7 @@ public abstract class TankContainer {
         double storedEnergyInKWh = storedEnergy / 3600.0;
 
         // Berechnet, wie viele Tage die Energie reicht
+        //Jonas Raemy: Wenn man oben schaut, sieht man direkt, was die Funktion macht.(calculateHeatingDays)
         return storedEnergyInKWh / requiredEnergy;
     }
 

@@ -26,6 +26,7 @@ public class TankView {
         um mehr Informationen über die Layout typen in JavaFX zu erhalten) */
         VBox layout = new VBox();
         // Padding und Abstand zwischen den Elementen setzen
+        //Jonas Raemy: Würde die Kommentare löschen, weil man ja sieht, was passiert. (setPadding, setSpacing)
         layout.setPadding(new Insets(15, 15, 15, 15));
         layout.setSpacing(20);
 

@@ -25,7 +25,9 @@ public class LiterTank extends TankContainer {
      */
     public LiterTank(int liter, String name, int maxTemp, int requiredEnergy) {
         //Diese Attribute werden der Superklasse überwiesen und hier im Konstruktor wird nur breite, höhe und länge zugewiesen
+        //Jonas Raemy: Kommentar stimmt nicht, Linter wird übergeben. Dazu, wenn man Ahnung von Code hat, weiss man was Super bedeutet.
         super (name, maxTemp, requiredEnergy);
+
 
         this.liter = checkValue(liter);
     }

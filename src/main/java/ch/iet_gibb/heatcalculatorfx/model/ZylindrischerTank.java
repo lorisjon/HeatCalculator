@@ -27,6 +27,7 @@ public class ZylindrischerTank extends TankContainer {
      */
     public ZylindrischerTank(int radius, int height, String name, int maxTemp, int requiredEnergy) {
         //Diese Attribute werden der Superklasse überwiesen und hier im Konstruktor wird nur radius und höhe zugewiesen
+
         super (name, maxTemp, requiredEnergy);
 
         this.radius = checkValue(radius);
