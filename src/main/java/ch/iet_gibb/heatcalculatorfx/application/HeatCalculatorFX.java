@@ -14,11 +14,6 @@ import java.util.List;
 
 
 public class HeatCalculatorFX extends Application {
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -42,4 +37,9 @@ public class HeatCalculatorFX extends Application {
         tanks.add(tank);
         return tanks;
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }

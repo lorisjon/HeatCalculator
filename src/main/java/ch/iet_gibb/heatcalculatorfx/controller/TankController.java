@@ -25,7 +25,7 @@ public class TankController implements javafx.event.EventHandler<ActionEvent> {
     }
 
     public void startView() {
-        view.startView();
+        view.startView(models.get(currentTank));
     }
 
     public void showNextTank() {
@@ -41,7 +41,7 @@ public class TankController implements javafx.event.EventHandler<ActionEvent> {
             currentTank = 0;
         }
 
-        view.startView();
+        view.startView(models.get(currentTank));
     }
 
     public String getTank() {

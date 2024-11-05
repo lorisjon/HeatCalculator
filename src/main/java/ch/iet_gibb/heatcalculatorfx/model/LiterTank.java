@@ -63,7 +63,7 @@ public class LiterTank extends TankContainer {
     public List<Property> getProperties() {
         List<Property> properties = super.getProperties();
 
-        Property liter = new Property("Fassungsvermögen in l:", Integer.toString(getLiter()));
+        Property liter = new Property("Fassungsvermögen in liter:", Integer.toString(getLiter()));
         properties.add(liter);
 
         return properties;
