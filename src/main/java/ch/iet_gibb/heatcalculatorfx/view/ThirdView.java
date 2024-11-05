@@ -17,14 +17,15 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class TankView implements ControllerViewInterface {
+public class ThirdView implements ControllerViewInterface {
 
     protected Stage stage;
     protected TankController controller;
 
-    public TankView(Stage stage, TankController controller) {
+    public ThirdView(Stage stage, TankController controller) {
         this.stage = stage;
         this.controller = controller;
+        stage.setTitle("Dritte (eigene) View");
     }
 
 
@@ -35,31 +36,21 @@ public class TankView implements ControllerViewInterface {
     public void startView(InterfaceTank data) {
         /* Layout erstellen (https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm
         um mehr Informationen über die Layout typen in JavaFX zu erhalten) */
-        VBox layout = new VBox();
-        // Padding und Abstand zwischen den Elementen setzen
-        //Jonas Raemy: Würde die Kommentare löschen, weil man ja sieht, was passiert. (setPadding, setSpacing)
-        layout.setPadding(new Insets(15, 15, 15, 15));
-        layout.setSpacing(20);
+        VBox layout3 = new VBox();
+        layout3.setPadding(new Insets(10));
+        layout3.setSpacing(10);
 
         /* Textfeld, für den Titel der Klassen, erstellen und dem Layout anfügen */
-        Text tankText = new Text();
-        //ruft die toString Methode des aktuellen Tanks auf und setzt den Text in der View
-        tankText.setText(data.getTitel());
-        tankText.setFont(Font.font ("Tahoma", FontWeight.EXTRA_BOLD, 20));
-        // Optisch ansprechender Hintergrund mittels CSS definieren
-        tankText.setStyle("-fx-font-family: monospace;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, darkmagenta 0%, aqua 50%);");
-        layout.getChildren().add(tankText);
+        Text tankText = getTankNode(data.getTitel());
+        layout3.getChildren().add(tankText);
 
-        /* Eingenschaften erstellen und in einem TilePane Layout anfügen */
-        TilePane propertiesPane = new TilePane();
-        // Einstellungen damit 2 spalten dargestellt werden
-        propertiesPane.setPrefColumns(2);
-        propertiesPane.setMaxWidth(Region.USE_PREF_SIZE);
-
-        for (Property property : data.getProperties()) {
-           addPropertyToPane(property, propertiesPane);
+        /* Eigenschaften untereinander in einer VBox darstellen und dem Layout anfügen */
+        VBox propertiesLayout = new VBox();
+        for(Property property : data.getProperties()){
+            // Label mit der Beschriftung erstellen und dem Layout anfügen
+            addPropertyToPane(property, propertiesLayout);
         }
-        layout.getChildren().add(propertiesPane);
+        layout3.getChildren().add(propertiesLayout);
 
 
 
@@ -67,43 +58,40 @@ public class TankView implements ControllerViewInterface {
         Button btnNext;
         btnNext = new Button("→");
         btnNext.setOnAction( controller );
-        layout.getChildren().add(btnNext);
+        layout3.getChildren().add(btnNext);
 
         /* Scene erstellen und die View darstellen */
-        Scene scene = new Scene(layout,700,350);
+        Scene scene = new Scene(layout3,450,600);
         stage.setScene(scene);
         stage.show();
     }
 
 
+    protected Text getTankNode(String title) {
+        Text tankText = new Text();
+        tankText.setText(title);
+        tankText.setFont(Font.font ("Helvetica", FontWeight.EXTRA_BOLD, 30));
+        tankText.setStyle("-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, darkblue 0%, black 50%);");
+        return tankText;
+    }
+
 
     /* Fügt die Angaben der Tanks
     also die einzelnen Properties in das Pane
      */
-    protected void addPropertyToPane(Property property, Pane layout) {
-        Font propertiesFont = Font.font("Tahoma", FontWeight.BOLD, 16);
-
+    protected void addPropertyToPane(Property property, Pane propertiesLayout) {
         // Label oder eher Textfeld für die Beschreibung erstellen
         // also, das, was dann links stehen soll, dinge wie: "Breite in Cm:", oder ähnlich
         Text keyText = new Text();
         keyText.setText(property.getKey());
-        keyText.setFont(propertiesFont);
-
-        //Text für Beschreibung linksbündig darstellen
-        keyText.setWrappingWidth(310);
-        keyText.setTextAlignment(TextAlignment.LEFT);
-        layout.getChildren().add(keyText);
-
+        keyText.setFont(Font.font ("Helvetica", FontWeight.BOLD, 20));
+        propertiesLayout.getChildren().add(keyText);
 
         // Label/Textfeld für die Werte passend zu den einzelnen Beschreibungen
         Text valueText = new Text();
         valueText.setText(property.getValue());
-        valueText.setFont(propertiesFont);
-
-        //Text Rechtsbündig darstellen
-        valueText.setWrappingWidth(100);
-        valueText.setTextAlignment(TextAlignment.RIGHT);
-        layout.getChildren().add(valueText);
+        valueText.setFont(Font.font("Helvetica", FontWeight.NORMAL, 16));
+        propertiesLayout.getChildren().add(valueText);
     }
 
 }

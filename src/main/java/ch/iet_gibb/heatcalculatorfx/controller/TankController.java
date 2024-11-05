@@ -10,7 +10,7 @@ public class TankController implements javafx.event.EventHandler<ActionEvent> {
     // Jonas Reamy: List to save Attributes
     protected List<TankContainer> models;
 
-    protected TankView view;
+    protected ControllerViewInterface view;
 
     //Jonas Raemy: Würde den Kommentar löschen, weil wenn man schaut currentTank bedeutet genau das gleiche.
     //index mit dem aktuell angezeigtem model im View
@@ -20,7 +20,7 @@ public class TankController implements javafx.event.EventHandler<ActionEvent> {
         this.models = models;
     }
 
-    public void setView(TankView view) {
+    public void setView(ControllerViewInterface view) {
         this.view = view;
     }
 
