@@ -7,6 +7,7 @@ import ch.iet_gibb.heatcalculatorfx.model.TankContainer;
 import ch.iet_gibb.heatcalculatorfx.model.ZylindrischerTank;
 import ch.iet_gibb.heatcalculatorfx.view.AlternativeTankView;
 import ch.iet_gibb.heatcalculatorfx.view.TankView;
+import ch.iet_gibb.heatcalculatorfx.view.ThirdView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -24,8 +25,9 @@ public class HeatCalculatorFX extends Application {
 
         AlternativeTankView alternativeView = new AlternativeTankView(stage, controller);
         TankView view = new TankView(stage, controller); /* Views können nun hier ausgewechselt werden.  */
+        ThirdView thirdView = new ThirdView(stage, controller);
 
-        controller.setView(alternativeView);
+        controller.setView(thirdView);
         controller.startView();
     }
     

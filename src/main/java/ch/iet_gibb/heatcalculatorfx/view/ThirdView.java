@@ -7,10 +7,7 @@ import ch.iet_gibb.heatcalculatorfx.property.Property;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -39,6 +36,7 @@ public class ThirdView implements ControllerViewInterface {
         VBox layout3 = new VBox();
         layout3.setPadding(new Insets(10));
         layout3.setSpacing(10);
+        layout3.setStyle("-fx-background-color: #005340");
 
         /* Textfeld, für den Titel der Klassen, erstellen und dem Layout anfügen */
         Text tankText = getTankNode(data.getTitel());
@@ -70,8 +68,8 @@ public class ThirdView implements ControllerViewInterface {
     protected Text getTankNode(String title) {
         Text tankText = new Text();
         tankText.setText(title);
-        tankText.setFont(Font.font ("Helvetica", FontWeight.EXTRA_BOLD, 30));
-        tankText.setStyle("-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, darkblue 0%, black 50%);");
+        tankText.setFont(Font.font ("Trebuchet MS", FontWeight.EXTRA_BOLD, 30));
+        tankText.setStyle("-fx-fill: white;");
         return tankText;
     }
 
@@ -84,13 +82,13 @@ public class ThirdView implements ControllerViewInterface {
         // also, das, was dann links stehen soll, dinge wie: "Breite in Cm:", oder ähnlich
         Text keyText = new Text();
         keyText.setText(property.getKey());
-        keyText.setFont(Font.font ("Helvetica", FontWeight.BOLD, 20));
+        keyText.setFont(Font.font ("Comic Sans MS", FontWeight.BOLD, 20));
         propertiesLayout.getChildren().add(keyText);
 
         // Label/Textfeld für die Werte passend zu den einzelnen Beschreibungen
         Text valueText = new Text();
         valueText.setText(property.getValue());
-        valueText.setFont(Font.font("Helvetica", FontWeight.NORMAL, 16));
+        valueText.setFont(Font.font("Comic Sans MS", FontWeight.NORMAL, 16));
         propertiesLayout.getChildren().add(valueText);
     }
 
