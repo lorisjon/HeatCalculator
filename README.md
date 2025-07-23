@@ -76,8 +76,8 @@ git clone https://github.com/lorisjon/HeatCalculator.git
 
 ## 👤 About the Developer
 
-> I'm an aspiring software developer with a strong interest in clean architecture, elegant UIs, and practical programming principles.  
+> I'm a software developer with a strong interest in elegant UIs, and practical programming principles, though this project was mainly in order to learn object-oriented programming.
 >  
 > This project helped me dive deep into **OOP** and **GUI development** in Java.  
 >  
-> 🔗 [View my Portfolio](https://your-portfolio-url.com)
+<!-- > 🔗 [View my Portfolio](https://your-portfolio-url.com) --> 
