@@ -1,10 +1,9 @@
-# 🔥 Heat Calculator  
-*Calculate how long your solar-heated water tank can keep the heat running*
-
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![OOP](https://img.shields.io/badge/OOP-purple?style=for-the-badge)
 ![JavaFX](https://img.shields.io/badge/JavaFX-3776AB?style=for-the-badge)
----
+# 🔥 Heat Calculator  
+*Calculate how long your solar-heated water tank can keep the heat running*
+
 
 ## 🎞 Demo
 
