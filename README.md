@@ -1,11 +1,11 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![OOP](https://img.shields.io/badge/OOP-purple?style=for-the-badge)
 ![JavaFX](https://img.shields.io/badge/JavaFX-3776AB?style=for-the-badge)
-# 🔥 Heat Calculator  
+# Heat Calculator  
 *Calculate how long your solar-heated water tank can keep the heat running*
 
 
-## 🎞 Demo
+## Demo
 
 <div align="center">
   <img src="assets/demo.gif" alt="Heat Calculator Demo" width="600">
@@ -13,24 +13,24 @@
 
 ---
 
-## ⚙️ Key Features
+## Key Features
 
-### ✅ Navigate Through 3 Tank Types
+### Navigate Through 3 Tank Types
 
 Each tank is presented on its own page. You can cycle through them using the arrow at the bottom of the UI.
 
-#### 🟥 Quadolin (Cubic Tank)
+#### Quadolin (Cubic Tank)
 <img src="assets/screenshot-cubic.png" width="500">
 
-#### 🟦 Zynandrix (Cylindrical Tank)
+#### Zynandrix (Cylindrical Tank)
 <img src="assets/screenshot-cylinder.png" width="500">
 
-#### 🟩 Liliane (Custom Volume Tank)
+#### Liliane (Custom Volume Tank)
 <img src="assets/screenshot-volume.png" width="500">
 
 ---
 
-### 🧠 Object-Oriented Design
+### Object-Oriented Design
 
 - Separate Java classes for each tank type
 - Inheritance and polymorphism used to streamline code
@@ -38,7 +38,7 @@ Each tank is presented on its own page. You can cycle through them using the arr
 
 ---
 
-### 🧩 Built with JavaFX & MVC
+### Built with JavaFX & MVC
 
 - Custom-designed UI with smooth navigation
 - Model-View-Controller architecture for clean separation of concerns
@@ -46,7 +46,7 @@ Each tank is presented on its own page. You can cycle through them using the arr
 
 ---
 
-## 📚 Project Context
+## Project Context
 
 > This project was created at **gibb** during the *Modul 320* course.  
 >  
@@ -58,7 +58,7 @@ Each tank is presented on its own page. You can cycle through them using the arr
 
 ---
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 ```bash
 # 1. Clone the repository
@@ -73,7 +73,7 @@ git clone https://github.com/lorisjon/HeatCalculator.git
 
 ---
 
-## 👤 About the Developer
+## About the Developer
 
 > I'm a software developer with a strong interest in elegant UIs, and practical programming principles, though this project was mainly in order to learn object-oriented programming.
 >  
